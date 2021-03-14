@@ -57,6 +57,8 @@ You can give arguments like seen below steps.
 
 ![give_arguments](https://i.ibb.co/zmhPYs0/argument1.jpg)
 
+Or you can change from `launchSettings.json`
+
 ## Unit Tests
 
 You can run unit tests as seen below.
