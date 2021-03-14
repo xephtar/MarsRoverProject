@@ -44,7 +44,7 @@ cd MarsRoverProject
 cd MarsRover
 dotnet run [file_path] [planet_name]
 ```
-If you do not `give file_path`argument, it will use `TestInput1.txt` at `Inputs` directory.
+If you do not `give file_path`argument, it will use `TestInput1.txt` at `MarsRover` directory.
 The planet name is also optional. Its default is "Mars".
 
 If you are using Visual Studio, you should open `MarsRover.sln`.
@@ -62,7 +62,7 @@ Or you can change from `launchSettings.json`
 
 ## Output
 
-It writes the output of the program into `Output.txt`.
+It writes the output of the program into `Output.txt` at `MarsRover` directory.
 
 ## Unit Tests
 
