@@ -26,5 +26,5 @@ cd MarsRoverProject
 cd MarsRover
 dotnet run [file_path] [planet_name]
 ```
-If you do not give file_path argument, it will use TestInput1.txt at Inputs directory.
+If you do not `give file_path`argument, it will use `TestInput1.txt` at `Inputs` directory.
 The planet name is also optional. Its default is "Mars".
