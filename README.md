@@ -14,7 +14,7 @@ Or you can clone the repository to any directory and open the MarsRover.sln with
 git clone https://github.com/xephtar/MarsRoverProject.git
 ```
 
-![alt text](https://devblogs.microsoft.com/visualstudio/wp-content/uploads/sites/4/2019/05/Visual-Studio-2019-Start-Window.png)
+![visual_studio_start_window](https://devblogs.microsoft.com/visualstudio/wp-content/uploads/sites/4/2019/05/Visual-Studio-2019-Start-Window.png)
 
 ## How to run
 
@@ -32,4 +32,10 @@ The planet name is also optional. Its default is "Mars".
 If you are using Visual Studio, you should open `MarsRover.sln`.
 Then you can build the solution as seen in below.
 
-![alt text](https://i.ibb.co/WDwgz63/build.jpg)
+![how_to_build_sln](https://i.ibb.co/WDwgz63/build.jpg)
+
+You can give arguments like seen below steps.
+
+![open_properties](https://i.ibb.co/hRXfQmP/argument.jpg)
+
+![give_arguments](https://i.ibb.co/zmhPYs0/argument1.jpg)
