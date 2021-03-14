@@ -35,6 +35,7 @@ git clone https://github.com/xephtar/MarsRoverProject.git
 
 ## How to run
 
+It takes `.txt file` as an input
 If you are using cmd to run project, you should follow the steps.
 
 ```console
