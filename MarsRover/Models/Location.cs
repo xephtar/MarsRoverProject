@@ -1,6 +1,6 @@
-﻿namespace MarsRover
+﻿namespace MarsRover.Models
 {
-    internal class Location
+    public class Location
     {
         // The position parameters
         public int XPos { get; set; }

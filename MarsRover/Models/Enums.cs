@@ -1,6 +1,6 @@
-﻿namespace MarsRover
+﻿namespace MarsRover.Models
 {
-    internal class Enums
+    public class Enums
     {
         // Represents the four cardinal compass points
         public enum Direction { N, E, S, W }

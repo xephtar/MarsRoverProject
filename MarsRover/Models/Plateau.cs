@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using static MarsRover.Enums;
+using static MarsRover.Models.Enums;
 
-namespace MarsRover
+namespace MarsRover.Models
 {
-    internal class Plateau
+    public class Plateau
     {
         public int XMax;
         public int YMax;
@@ -15,8 +15,12 @@ namespace MarsRover
         // Empty constructor
         public Plateau() { }
 
-        public Plateau(int XMax, int YMax, string PlanetName = "Mars")
+        public Plateau(int XMax, int YMax, string PlanetName)
         {
+            if (XMax < 0 || YMax < 0)
+            {
+                throw new ArgumentOutOfRangeException("XMax or YMax of plateau should not be less than 0!");
+            }
             Rovers = new List<Rover>();
             this.XMax = XMax;
             this.YMax = YMax;
@@ -29,12 +33,20 @@ namespace MarsRover
             try
             {
                 Direction DirectionOfRover = (Direction)Enum.Parse(typeof(Direction), direction);
+                if (XPos > XMax || YPos > YMax)
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
                 Rovers.Add(new Rover(XPos, YPos, DirectionOfRover, RoverCount));
                 RoverCount += 1;
             }
+            catch (ArgumentOutOfRangeException)
+            {
+                throw new ArgumentOutOfRangeException("Position of rover is not inside the plateau!");
+            }
             catch (ArgumentException)
             {
-                Console.WriteLine("{0} is not a member of the Direction enumeration.", direction);
+                throw new ArgumentException("Given direction is not valid direction. It should N, W, E or S!");
             }
         }
 
@@ -69,18 +81,22 @@ namespace MarsRover
                             }
                             else
                             {
-                                Console.WriteLine("Not valid!");
+                                throw new ArgumentOutOfRangeException("The rover can not move! It is out of plateau.");
                             }
                             break;
 
                         default:
-                            break;
+                            throw new ArgumentException();
                     }
                 }
             }
-            catch (Exception e)
+            catch (ArgumentOutOfRangeException)
             {
-                throw new Exception("The rover is not found!", e);
+                throw new ArgumentOutOfRangeException("The rover is not found!");
+            }
+            catch (ArgumentException)
+            {
+                throw new ArgumentException("The movement is not valid. It should be L, R or M!");
             }
         }
     }

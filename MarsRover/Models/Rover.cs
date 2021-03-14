@@ -1,9 +1,9 @@
 ﻿using System;
-using static MarsRover.Enums;
+using static MarsRover.Models.Enums;
 
-namespace MarsRover
+namespace MarsRover.Models
 {
-    internal class Rover
+    public class Rover
     {
         public int ID { get; set; }
 
@@ -18,9 +18,19 @@ namespace MarsRover
         {
         }
 
-        public Rover(int xPos, int yPos, Direction direction, int ID)
+        public Rover(int XPos, int YPos, Direction direction, int ID)
         {
-            CoordinatesOfRover = new Location(xPos, yPos);
+            if (XPos < 0 || YPos < 0)
+            {
+                throw new ArgumentOutOfRangeException("X or Y position of rover should not be less than 0!");
+            }
+
+            if (ID < 0)
+            {
+                throw new ArgumentOutOfRangeException("ID of rover should not be less than 0!");
+            }
+
+            CoordinatesOfRover = new Location(XPos, YPos);
             DirectionOfRover = direction;
             this.ID = ID;
         }
