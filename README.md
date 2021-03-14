@@ -39,3 +39,11 @@ You can give arguments like seen below steps.
 ![open_properties](https://i.ibb.co/hRXfQmP/argument.jpg)
 
 ![give_arguments](https://i.ibb.co/zmhPYs0/argument1.jpg)
+
+## Unit Tests
+
+You can run unit tests as seen below.
+There are 17 unit test for two classes.
+
+![unit_tests](https://i.ibb.co/x3XcfHL/unit.jpg)
+
