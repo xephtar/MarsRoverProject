@@ -59,6 +59,10 @@ You can give arguments like seen below steps.
 
 Or you can change from `launchSettings.json`
 
+## Output
+
+It writes the output of the program into `Output.txt` at `Outputs` directory.
+
 ## Unit Tests
 
 You can run unit tests as seen below.
