@@ -29,7 +29,7 @@ dotnet run [file_path] [planet_name]
 If you do not `give file_path`argument, it will use `TestInput1.txt` at `Inputs` directory.
 The planet name is also optional. Its default is "Mars".
 
-If you are using Visual Studio, you should open MarsRover.sln.
+If you are using Visual Studio, you should open `MarsRover.sln`.
 Then you can build the solution as seen in below.
 
 ![alt text](https://i.ibb.co/WDwgz63/build.jpg)
