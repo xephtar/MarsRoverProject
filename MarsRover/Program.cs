@@ -2,14 +2,16 @@
 using System;
 using System.IO;
 using System.Linq;
+using System.Reflection;
+using System.Threading.Tasks;
 
 namespace MarsRover
 {
     internal class Program
     {
-        private static void Main(string[] args)
+        private static async Task Main(string[] args)
         {
-            var path = "Inputs/TestInput1.txt";
+            var path = Path.Combine(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\")), "TestInput1.txt");
             var planetName = "Mars";
             if (args.Any())
             {
@@ -25,7 +27,7 @@ namespace MarsRover
                 }
             }
 
-            ReadFileAndMoveRoversAsync(path, planetName);
+            await ReadFileAndMoveRoversAsync(path, planetName);
         }
 
         public static bool IsEven(int number)
@@ -40,7 +42,7 @@ namespace MarsRover
             }
         }
 
-        public static async System.Threading.Tasks.Task ReadFileAndMoveRoversAsync(string path, string planetName)
+        public static async Task ReadFileAndMoveRoversAsync(string path, string planetName)
         {
             if (File.Exists(path))
             {
@@ -79,7 +81,11 @@ namespace MarsRover
                         PlateauOnMars.AddRoverWithInformation(XPos, YPos, Direction);
                     }
                 }
-                await File.WriteAllLinesAsync("Output.txt", PlateauOnMars.GetInformationOfRovers());
+                await File.WriteAllLinesAsync(Path.Combine(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\")), "Output.txt"), PlateauOnMars.GetInformationOfRovers());
+            }
+            else
+            {
+                throw new FileNotFoundException();
             }
         }
     }
