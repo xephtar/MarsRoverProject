@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MarsRover.Models;
+using System;
 using System.IO;
 using System.Linq;
 
@@ -23,7 +24,14 @@ namespace MarsRover
                             string[] variables = line.Split(' ');
                             int XMax = int.Parse(variables[0]);
                             int YMax = int.Parse(variables[1]);
-                            PlateauOnMars = new Plateau(XMax, YMax);
+                            if (args.Length == 2)
+                            {
+                                PlateauOnMars = new Plateau(XMax, YMax, args[1]);
+                            }
+                            else
+                            {
+                                PlateauOnMars = new Plateau(XMax, YMax, "Mars");
+                            }
                             continue;
                         }
 
@@ -43,10 +51,14 @@ namespace MarsRover
                     }
                     PlateauOnMars.GetInformationOfRovers();
                 }
+                else
+                {
+                    throw new FileNotFoundException();
+                }
             }
             else
             {
-                Console.WriteLine("You should give an input txt file as argument!");
+                throw new ArgumentException("You should give file name as an argument!");
             }
         }
 
