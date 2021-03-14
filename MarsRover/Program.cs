@@ -49,9 +49,11 @@ namespace MarsRover
                 Plateau PlateauOnMars = new Plateau();
                 for (string line; (line = input.ReadLine()) != null; lineCounter++)
                 {
+                    string[] variables = line.Split(' ');
                     if (lineCounter == 0)
                     {
-                        string[] variables = line.Split(' ');
+                        // If it is first line
+                        // Create Plateau
                         int XMax = int.Parse(variables[0]);
                         int YMax = int.Parse(variables[1]);
 
@@ -62,12 +64,15 @@ namespace MarsRover
 
                     if (IsEven(lineCounter))
                     {
+                        // If the line count is even
+                        // It is movement instruction for rover
                         int RoverID = PlateauOnMars.RoverCount - 1;
                         PlateauOnMars.MoveRoverWithIDAndSequence(RoverID, line);
                     }
                     else
                     {
-                        string[] variables = line.Split(' ');
+                        // If the line count is odd
+                        // It is a new rover to create
                         int XPos = int.Parse(variables[0]);
                         int YPos = int.Parse(variables[1]);
                         string Direction = variables[2];

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "MarsRover": {
+      "commandName": "Project",
+      //"commandLineArgs": "[file_path] [planet_name]"
+    }
+  }
+}
