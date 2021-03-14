@@ -50,12 +50,14 @@ namespace MarsRover.Models
             }
         }
 
-        public void GetInformationOfRovers()
+        public List<string> GetInformationOfRovers()
         {
+            List<string> InformationOfRovers = new List<string>();
             foreach (Rover rover in Rovers)
             {
-                rover.GetInformation();
+                InformationOfRovers.Add(rover.GetInformation());
             }
+            return InformationOfRovers;
         }
 
         public void MoveRoverWithIDAndSequence(int ID, string sequence)

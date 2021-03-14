@@ -25,7 +25,7 @@ namespace MarsRover
                 }
             }
 
-            ReadFileAndMoveRovers(path, planetName);
+            ReadFileAndMoveRoversAsync(path, planetName);
         }
 
         public static bool IsEven(int number)
@@ -40,7 +40,7 @@ namespace MarsRover
             }
         }
 
-        public static void ReadFileAndMoveRovers(string path, string planetName)
+        public static async System.Threading.Tasks.Task ReadFileAndMoveRoversAsync(string path, string planetName)
         {
             if (File.Exists(path))
             {
@@ -79,7 +79,7 @@ namespace MarsRover
                         PlateauOnMars.AddRoverWithInformation(XPos, YPos, Direction);
                     }
                 }
-                PlateauOnMars.GetInformationOfRovers();
+                await File.WriteAllLinesAsync("Output.txt", PlateauOnMars.GetInformationOfRovers());
             }
         }
     }

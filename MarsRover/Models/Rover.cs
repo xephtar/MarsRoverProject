@@ -142,9 +142,10 @@ namespace MarsRover.Models
             }
         }
 
-        public void GetInformation()
+        public string GetInformation()
         {
-            Console.WriteLine("{0} {1} {2}", CoordinatesOfRover.XPos, CoordinatesOfRover.YPos, DirectionOfRover);
+            string information = String.Format("{0} {1} {2}", CoordinatesOfRover.XPos, CoordinatesOfRover.YPos, DirectionOfRover);
+            return information;
         }
     }
 }
