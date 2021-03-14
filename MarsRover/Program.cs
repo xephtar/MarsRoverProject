@@ -10,6 +10,7 @@ namespace MarsRover
         private static void Main(string[] args)
         {
             var path = "Inputs/TestInput1.txt";
+            var planetName = "Mars";
             if (args.Any())
             {
                 try
@@ -17,9 +18,14 @@ namespace MarsRover
                     path = args[0];
                 }
                 catch (FileNotFoundException) { throw new FileNotFoundException(); };
+
+                if (args.Length == 2)
+                {
+                    planetName = args[1];
+                }
             }
 
-            ReadFileAndMoveRovers(path);
+            ReadFileAndMoveRovers(path, planetName);
         }
 
         public static bool IsEven(int number)
@@ -34,7 +40,7 @@ namespace MarsRover
             }
         }
 
-        public static void ReadFileAndMoveRovers(string path)
+        public static void ReadFileAndMoveRovers(string path, string planetName)
         {
             if (File.Exists(path))
             {
@@ -48,14 +54,9 @@ namespace MarsRover
                         string[] variables = line.Split(' ');
                         int XMax = int.Parse(variables[0]);
                         int YMax = int.Parse(variables[1]);
-                        if (args.Length == 2)
-                        {
-                            PlateauOnMars = new Plateau(XMax, YMax, args[1]);
-                        }
-                        else
-                        {
-                            PlateauOnMars = new Plateau(XMax, YMax, "Mars");
-                        }
+
+                        PlateauOnMars = new Plateau(XMax, YMax, planetName);
+
                         continue;
                     }
 
